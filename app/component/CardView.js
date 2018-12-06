@@ -88,10 +88,10 @@ class CardView extends Component {
                         <View style={{ marginTop: 20 }}>
                             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                                 {this.app.map((daftarApp, key) =>
-                                    <TouchableHighlight onPress={() => this.props.navigation.navigate({routeName: 'DetailScreen'})}>
+                                    <TouchableHighlight onPress={() => this.props.navigation.navigate( 'DetailScreen')} key={key}>
                                    {/* <TouchableHighlight onPress={() => alert("Test Guys")}> */}
                                     
-                                    <View style={{ marginRight: 5, marginLeft: 2 }} key={key} >
+                                    <View style={{ marginRight: 5, marginLeft: 2 }}  >
                                         <View style={{ width: 80, height: 80, }}>
                                             <Image style={{ width: 80, height: 80, }} source={daftarApp.imagesrc} />
                                         </View>

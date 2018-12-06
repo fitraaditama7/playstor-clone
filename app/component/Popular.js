@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, List, ListItem, Card, Icon, Right, Left, CardItem, Content } from 'native-base';
-import { Text, Image, ScrollView } from 'react-native';
-import { createToTabNavigator, createAppContainer } from 'react-navigation';
+import { Text, Image, ScrollView, Switch } from 'react-native';
+import { createTopTabNavigator, createAppContainer } from 'react-navigation';
 
 export default class Popular extends Component {
     daftarApp = [
@@ -61,9 +61,7 @@ export default class Popular extends Component {
 
     render() {
         return (
-            <Content style={{marginLeft: 5, marginRight: 5}}>
-
-                <Card>
+            
                     <List>
                         {this.daftarApp.map((daftarApp, key) =>
 
@@ -71,14 +69,14 @@ export default class Popular extends Component {
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                     <Text style={{ marginTop: 5, marginRight: 10, fontSize: 11 }}>{key+1}</Text>
 
-                                    <View style={{ width: 50, height: 50, backgroundColor: "black" }}>
-                                        <Image style={{ width: 50, height: 50,}} source={daftarApp.imagesrc} />
+                                    <View style={{ width: 60, height: 60, backgroundColor: "#fff" }}>
+                                        <Image style={{ width: 60, height: 60, marginTop: 5}} source={daftarApp.imagesrc} />
                                     </View>
-                                    <View style={{ height: 50, marginLeft: 10 }}>
+                                    <View style={{ height: 60, marginLeft: 10 }}>
                                         <Text style={{ fontSize: 12 }}>{daftarApp.nama}</Text>
                                         <Text style={{ fontSize: 11 }}>{daftarApp.pengembang}</Text>
                                         <View>
-                                            <Text style={{ fontSize: 10, marginTop: 10 }}>{daftarApp.ukuran}.{daftarApp.score}</Text>
+                                            <Text style={{ fontSize: 10, marginTop: 20 }}>{daftarApp.ukuran}.{daftarApp.score}</Text>
                                         </View>
                                     </View>
                                     <Right >
@@ -89,8 +87,8 @@ export default class Popular extends Component {
                             </ListItem>
                         )}
                     </List>
-                </Card>
-            </Content>
+
         )
     }
 }
+

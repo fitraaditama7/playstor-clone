@@ -23,6 +23,9 @@ const instructions = Platform.select({
 });
 
 class App extends Component {
+  static navigationOptions = { header: {
+    visible: false,
+  }, };
   render() {
     return (
       <RootView />
@@ -52,6 +55,12 @@ const styles = StyleSheet.create({
 const RootView = createStackNavigator({
   HomeScreen:  HalamanHome,
   DetailScreen: HalamanDetail
-});
+}, {
+  headerMode: 'none',
+  navigationOptions: {
+      headerVisible: false,
+  }
+}
+);
 
 export default createAppContainer(RootView);
