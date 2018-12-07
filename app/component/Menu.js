@@ -3,53 +3,93 @@ import {createAppContainer, createMaterialTopTabNavigator, withNavigation} from 
 import {View, Text} from 'react-native';
 import MenuUser from './MenuUser.js';
 import HalamanDetail from './Detail'
-let colors= '';
 
 
 
 class HalamanBeranda extends Component {
+    static navigationOptions = {
+        tabBarOptions: {
+            style: {
+                backgroundColor: '#109c57'
+            }
+        }
+    }
+    
     constructor(props){
         super(props);
+        state = {
+            colorMenu : '#109c57'
+        }
     }
     render(){
         const navigate = this.props.navigation;
 
         return(
-            <MenuUser menuType="all"/>
+            <MenuUser menuType="all" colorMenu= '#109c57'/>
         )
     }
 }
 
 class HalamanFilm extends Component {
+    static navigationOptions = {
+        tabBarOptions: {
+            style: {
+                backgroundColor: '#ff1744'
+            }
+        }
+    }
     constructor(props){
         super(props);
+        state = {
+            colorMenu : '#ff1744'
+        }
     }
     render(){
         return(
-            <MenuUser menuType="film"/>
+            <MenuUser menuType="film" colorMenu='#ff1744'/>
         )
     }
 }
 
 class HalamanBuku extends Component {
+    static navigationOptions = {
+        tabBarOptions: {
+            style: {
+                backgroundColor: '#039be5'
+            }
+        }
+    }
     constructor(props){
         super(props);
+        state = {
+            colorMenu : '#039be5'
+        }
     }
     render(){
         return(
-            <MenuUser menuType="Buku"/>
+            <MenuUser menuType="Buku" colorMenu='#039be5'/>
         )
     }
 }
 
 
 class HalamanGame extends Component {
+    static navigationOptions = {
+        tabBarOptions: {
+            style: {
+                backgroundColor: '#109c57'
+            }
+        }
+    }
     constructor(props){
         super(props);
+        state = {
+            colorMenu : '#109c57'
+        }
     }
     render() {
         return(
-            <MenuUser menuType="game"/>
+            <MenuUser menuType="game" colorMenu='#109c57'/>
         )
     }
 }
@@ -86,7 +126,6 @@ const TabNavigator = createMaterialTopTabNavigator({
         tabBarPosition: 'bottom',
         style: {
           elevation:0,
-          backgroundColor: '#109c57',
         },
       }
 });

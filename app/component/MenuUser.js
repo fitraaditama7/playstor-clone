@@ -32,8 +32,19 @@ class HalamanUntukAnda extends Component {
 }
 
 class HalamanPalingPopuler extends Component {
+    constructor(props) {
+        super(props)
+    }
     static navigationOptions = {
         tabBarIcon: () => <Icon name='insert-chart' type="MaterialIcons" style={{fontSize:15}}/>,
+        tabBarOptions: {
+                 labelStyle: {
+            fontWeight: 'bold',
+            color: this.props.colorMenu,
+            fontSize: 10,
+        },
+
+        }
     }
     render() {
         return(
@@ -49,6 +60,7 @@ class HalamanPalingPopuler extends Component {
 class HalamanKategori extends Component {
     static navigationOptions = {
         tabBarIcon: () => <Icon name='shape' type="MaterialCommunityIcons" style={{fontSize:15}} />,
+        
     }
     render() {
         return (
@@ -233,12 +245,7 @@ const tabMenu = createMaterialTopTabNavigator({
             activeTintColor: '#109c57',
         },
 
-        labelStyle: {
-            fontWeight: 'bold',
-            color: '#109c57',
-            fontSize: 10,
-        },
-
+   
         tabStyle: {
             width: 100,
     
